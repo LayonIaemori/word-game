@@ -3,49 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Jogo de Palavras</title>
-    <script>
-        var palavras = ["banana", "carro", "cachorro", "computador", "abacaxi", "bicicleta", "guitarra", "elefante", "zezao", "amanda", "mayara", "layon"];
-        var palavra;
-        var palavraEmbaralhada;
-
-        function embaralharPalavra() {
-            palavra = palavras[Math.floor(Math.random() * palavras.length)];
-            palavraEmbaralhada = palavra.split('').sort(function() {
-                return 0.5 - Math.random();
-            }).join('');
-            document.getElementById('palavra-embaralhada').textContent = palavraEmbaralhada;
-        }
-
-        function tentarAdivinhar() {
-            var adivinhacao = prompt('Adivinhe a palavra:');
-            return adivinhacao;
-        }
-
-        function verificarPalavra(adivinhacao) {
-            return adivinhacao.toLowerCase() === palavra.toLowerCase();
-        }
-
-        function jogar() {
-            var tentativa = tentarAdivinhar();
-
-            if (verificarPalavra(tentativa)) {
-                alert('Parabéns! Você adivinhou a palavra corretamente.');
-            } else {
-                alert('Infelizmente, a palavra correta era: ' + palavra);
-            }
-        }
-
-        window.onload = function() {
-            document.getElementById('embaralhar-btn').addEventListener('click', embaralharPalavra);
-            document.getElementById('adivinhar-btn').addEventListener('click', jogar);
-            embaralharPalavra(); // Embaralhar a palavra ao carregar a página
-        };
-    </script>
 </head>
 <body>
     <h1>Jogo de Palavras</h1>
     <p>Aqui estão algumas palavras para o jogo:</p>
-    <ul>
+    <ul id="word-list">
         <li>banana</li>
         <li>carro</li>
         <li>cachorro</li>
@@ -60,9 +22,9 @@
         <li>layon</li>
     </ul>
 
-    <button id="embaralhar-btn">Embaralhar Palavra</button>
-    <button id="adivinhar-btn">Adivinhar</button>
-    
-    <p>Palavra embaralhada: <span id="palavra-embaralhada"></span></p>
+    <button onclick="shuffleWords()">Embaralhar Palavras</button>
+    <button onclick="guessWord()">Adivinhar Palavra</button>
+
+    <script src="word_game.js"></script>
 </body>
 </html>
