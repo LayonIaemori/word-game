@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Game — Jogo de Palavras</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Word Game</h1>
+    <p class="subtitle">Descubra a palavra embaralhada!</p>
+
+    <!-- Score Panel -->
+    <div class="score-panel">
+      <div class="score-item">
+        <span class="score-label">Acertos</span>
+        <span class="score-value hits" id="hits">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Erros</span>
+        <span class="score-value misses" id="misses">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Rodadas</span>
+        <span class="score-value rounds" id="rounds">0</span>
+      </div>
+    </div>
+
+    <!-- Shuffled Word Display -->
+    <div class="word-display">
+      <p class="word-label">Palavra embaralhada</p>
+      <p id="shuffled-word">•••••</p>
+    </div>
+
+    <!-- Guess Input -->
+    <div class="input-row">
+      <input
+        type="text"
+        id="guess-input"
+        placeholder="Digite sua resposta..."
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+      />
+    </div>
+
+    <button class="btn btn-primary" onclick="checkGuess()">Confirmar resposta</button>
+    <button class="btn btn-secondary" onclick="newRound()">Pular palavra ↪️</button>
+
+    <!-- Feedback -->
+    <div id="feedback"></div>
+
+    <div class="footer">
+      Feito por <a href="https://github.com/LayonIaemori" target="_blank">Layon Iaemori</a>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
