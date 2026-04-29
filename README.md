@@ -1,42 +1,59 @@
 # 🎮 Word Game — Jogo de Palavras
 
-> Adivinhe a palavra embaralhada antes que o tempo acabe!
+> Descubra a palavra embaralhada antes de errar 3 vezes!
 
-[![GitHub Pages](https://img.shields.io/badge/Demo-GitHub%20Pages-00C7B7?style=for-the-badge&logo=github&logoColor=white)](https://layoniaemori.github.io/word-game/word_game4.html)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Demo](https://img.shields.io/badge/▶%20Jogar%20Agora-GitHub%20Pages-e94560?style=for-the-badge&logo=github&logoColor=white)](https://layoniaemori.github.io/word-game/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]()
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
+
+---
+
+## 📸 Preview
+
+| Tela do jogo |
+|---|
+| Palavra embaralhada em destaque, placar de acertos/erros/rodadas e feedback colorido em tempo real |
 
 ---
 
 ## 🕹️ Como jogar
 
-1. Acesse o jogo pelo link da demo acima
-2. Uma palavra embaralhada será exibida na tela
-3. Clique em **"Embaralhar Palavra"** para gerar uma nova palavra
-4. Clique em **"Adivinhar"** e tente descobrir qual é a palavra original
-5. Descubra quantas você consegue acertar!
+1. Acesse o jogo pelo botão **Jogar Agora** acima
+2. Uma palavra embaralhada aparece na tela
+3. Digite sua resposta e pressione **Confirmar** (ou Enter)
+4. Acertou ✅ — próxima palavra começa automaticamente
+5. Errou ❌ — a resposta correta é revelada e o jogo avança
+6. Acompanhe seu placar de acertos e erros!
 
 ---
 
 ## ✨ Funcionalidades
 
-- 🔀 Embaralhamento aleatório de palavras
-- ✅ Verificação da resposta do jogador
-- 🖥️ Versão web (HTML + JS)
-- 🐍 Versão terminal (Python)
+- 🔀 Embaralhamento real com algoritmo Fisher-Yates
+- 🏆 Placar de acertos, erros e rodadas por sessão
+- ✅ Feedback visual colorido (verde = acerto, vermelho = erro)
+- ⏩ Avanço automático para a próxima palavra
+- ⏭️ Botão de "Pular" palavra
+- ⌨️ Suporte ao Enter para confirmar resposta
+- 📱 Layout responsivo (mobile e desktop)
+- 🐍 Versão para terminal em Python com 3 tentativas por palavra
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## 🗂️ Estrutura do projeto
 
 ```
 word-game/
-├── word_game4.html   # Versão principal do jogo (web)
-├── word_game.html    # Versão inicial do jogo (web)
-├── word_game.js      # Lógica JavaScript (versão antiga)
-├── word_game.py      # Versão para terminal em Python
-├── words.txt         # Lista de palavras usadas pelo jogo Python
+├── index.html          # Entrada principal — GitHub Pages
+├── css/
+│   └── style.css       # Estilos visuais do jogo
+├── js/
+│   └── game.js         # Lógica JavaScript (Fisher-Yates, placar, feedback)
+├── python/
+│   ├── word_game.py    # Versão para terminal com 3 tentativas
+│   └── words.txt       # Banco de 50 palavras organizadas por categoria
 └── README.md
 ```
 
@@ -45,35 +62,58 @@ word-game/
 ## 🚀 Como rodar localmente
 
 ### Versão Web
-Basta abrir o arquivo `word_game4.html` diretamente no seu navegador — nenhuma instalação necessária.
+```bash
+# Clone o repositório
+git clone https://github.com/LayonIaemori/word-game.git
+cd word-game
+
+# Abra no navegador
+open index.html        # macOS
+start index.html       # Windows
+xdg-open index.html    # Linux
+```
 
 ### Versão Python (terminal)
 ```bash
-# Certifique-se de ter Python 3 instalado
+cd python
 python word_game.py
 ```
+> Requer Python 3.10 ou superior.
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## 📦 Banco de palavras
 
-| Tecnologia | Uso |
+50 palavras organizadas em 5 categorias:
+
+| Categoria | Exemplos |
 |---|---|
-| HTML5 | Estrutura da página |
-| JavaScript | Lógica do jogo no navegador |
-| Python 3 | Versão para terminal |
+| 🐾 Animais | cachorro, elefante, borboleta... |
+| 🍎 Frutas | banana, abacaxi, maracujá... |
+| 💃 Objetos | computador, guitarra, telescópio... |
+| 🏙️ Lugares | biblioteca, aerøporto, planetário... |
+| 🌲 Natureza | montanha, cachoeira, tempestade... |
 
 ---
 
-## 🔮 Melhorias planejadas
+## 🛠️ Tecnologias
 
-- [ ] Sistema de pontuação e placar
-- [ ] Limite de tentativas com feedback visual
-- [ ] Temporizador por rodada
-- [ ] Banco de palavras maior e categorizado
-- [ ] Design responsivo com CSS moderno
-- [ ] Separar HTML, CSS e JS em arquivos distintos
-- [ ] Remover nomes pessoais da lista de palavras
+| Tecnologia | Versão | Uso |
+|---|---|---|
+| HTML5 | — | Estrutura da página |
+| CSS3 | — | Layout responsivo e visual |
+| JavaScript (ES6+) | — | Lógica do jogo no navegador |
+| Python | 3.10+ | Versão terminal |
+
+---
+
+## 🔮 Próximas melhorias
+
+- [ ] Temporizador regressivo por rodada
+- [ ] Recordes salvos com `localStorage`
+- [ ] Seleção de categoria de palavras
+- [ ] Animações de acerto/erro
+- [ ] Modo multiplayer local
 
 ---
 
