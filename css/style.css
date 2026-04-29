@@ -1,0 +1,222 @@
+/* =============================================
+   Word Game — Stylesheet
+   Author: Layon Iaemori
+   ============================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  color: #eaeaea;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: #16213e;
+  border-radius: 16px;
+  padding: 40px 32px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 32px;
+}
+
+/* Score Panel */
+.score-panel {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.score-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.score-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f3460;
+  background: #e94560;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.score-value.hits  { background: #27ae60; }
+.score-value.misses { background: #e74c3c; }
+.score-value.rounds { background: #2980b9; }
+
+/* Word Display */
+.word-display {
+  background: #0f3460;
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin-bottom: 24px;
+}
+
+.word-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+#shuffled-word {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #e94560;
+  letter-spacing: 6px;
+  min-height: 48px;
+}
+
+/* Input */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+#guess-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #0f3460;
+  background: #0f3460;
+  color: #eaeaea;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#guess-input:focus {
+  border-color: #e94560;
+}
+
+#guess-input::placeholder {
+  color: #555;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: #e94560;
+  color: #fff;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-secondary {
+  background: #0f3460;
+  color: #eaeaea;
+  width: 100%;
+  padding: 12px;
+}
+
+.btn-secondary:hover { opacity: 0.8; }
+
+/* Feedback */
+#feedback {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 16px;
+  transition: background 0.3s;
+}
+
+#feedback.correct {
+  background: rgba(39, 174, 96, 0.2);
+  color: #2ecc71;
+  border: 1px solid #27ae60;
+}
+
+#feedback.wrong {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  border: 1px solid #c0392b;
+}
+
+#feedback.info {
+  background: rgba(41, 128, 185, 0.15);
+  color: #5dade2;
+  border: 1px solid #2980b9;
+}
+
+/* Footer */
+.footer {
+  margin-top: 28px;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.footer a {
+  color: #e94560;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .container { padding: 28px 18px; }
+  h1 { font-size: 1.6rem; }
+  #shuffled-word { font-size: 1.7rem; letter-spacing: 4px; }
+}
