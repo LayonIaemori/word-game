@@ -127,5 +127,5 @@ python word_game.py
 ---
 
 <div align="center">
-  <sub>Feito com ❤️ por Layon Iaemori</sub>
+  <sub></sub>
 </div>
