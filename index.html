@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <h1>🎮 Word Game</h1>
-    <p class="subtitle">Descubra a palavra embaralhada!</p>
+    <p class="subtitle">Descubra a palavra embaralhada! <span id="best-score-display"></span></p>
 
     <!-- Score Panel -->
     <div class="score-panel">
@@ -18,13 +18,21 @@
         <span class="score-value hits" id="hits">0</span>
       </div>
       <div class="score-item">
+        <span class="score-label">Rodada</span>
+        <span class="score-value rounds" id="rounds">0/10</span>
+      </div>
+      <div class="score-item">
         <span class="score-label">Erros</span>
         <span class="score-value misses" id="misses">0</span>
       </div>
-      <div class="score-item">
-        <span class="score-label">Rodadas</span>
-        <span class="score-value rounds" id="rounds">0</span>
+    </div>
+
+    <!-- Timer -->
+    <div class="timer-bar-wrap">
+      <div class="timer-bar-track">
+        <div id="timer-fill" class="timer-fill"></div>
       </div>
+      <span id="timer-label" class="timer-label">30</span>
     </div>
 
     <!-- Shuffled Word Display -->
@@ -32,6 +40,9 @@
       <p class="word-label">Palavra embaralhada</p>
       <p id="shuffled-word">•••••</p>
     </div>
+
+    <!-- Hint -->
+    <p id="hint" class="hint"></p>
 
     <!-- Guess Input -->
     <div class="input-row">
@@ -45,14 +56,38 @@
       />
     </div>
 
-    <button class="btn btn-primary" onclick="checkGuess()">Confirmar resposta</button>
-    <button class="btn btn-secondary" onclick="newRound()">Pular palavra ↪️</button>
+    <button class="btn btn-primary" id="btn-confirm" onclick="checkGuess()">Confirmar resposta</button>
+    <button class="btn btn-secondary" onclick="skipRound()">Pular palavra ↪️</button>
 
     <!-- Feedback -->
     <div id="feedback"></div>
 
     <div class="footer">
       Feito por <a href="https://github.com/LayonIaemori" target="_blank">Layon Iaemori</a>
+    </div>
+  </div>
+
+  <!-- End Game Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <div id="modal-emoji" class="modal-emoji"></div>
+      <h2 id="modal-title"></h2>
+      <p id="modal-subtitle" class="modal-subtitle"></p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <span class="modal-stat-val" id="modal-hits"></span>
+          <span class="modal-stat-lbl">Acertos</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-val" id="modal-pct"></span>
+          <span class="modal-stat-lbl">Aproveitamento</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-val" id="modal-best"></span>
+          <span class="modal-stat-lbl">Recorde</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="restartGame()">🔄 Jogar novamente</button>
     </div>
   </div>
 
